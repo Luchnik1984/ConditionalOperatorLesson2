@@ -28,20 +28,27 @@ public class Main {
                 "Какая у Вас система?: ");
         clientOS = input.nextByte();
         if (clientDeviceYear >= 2015) {
-            if (clientOS == 1) {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            } else if (clientOS == 0) {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Вы ввели недопустимое значение.");
+            switch (clientOS) {
+                case 0:
+                    System.out.println("Установите версию приложения для iOS по ссылке");
+                    break;
+                case 1:
+                    System.out.println("Установите версию приложения для Android по ссылке");
+                    break;
+                default:
+                    System.out.println("Вы ввели недопустимое значение.");
             }
-        } else if (clientOS == 1) {
-            System.out.println("Установите облегчённую " +
-                    "версию приложения для Android по ссылке");
-        } else if (clientOS == 0) {
-            System.out.println("Установите  облегченную версию приложения для iOS по ссылке");
         } else {
-            System.out.println("Вы ввели недопустимое значение.");
+            switch (clientOS) {
+                case 0:
+                    System.out.println("Установите облегчённую версию приложения для iOS по ссылке");
+                    break;
+                case 1:
+                    System.out.println("Установите облегчённую версию приложения для Android по ссылке");
+                    break;
+                default:
+                    System.out.println("Вы ввели недопустимое значение.");
+            }
         }
 
         // Задача 3.
